@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/faq', function () {
+    return view('faq');
+});
+
+Route::get('/inscription', 'InscriptionController@formulaire');
+Route::post('/inscription', 'InscriptionController@traitement');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
