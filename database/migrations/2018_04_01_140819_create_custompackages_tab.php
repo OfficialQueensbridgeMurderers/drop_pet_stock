@@ -17,7 +17,7 @@ class CreateCustompackagesTab extends Migration
             $table->increments('id');
             $table->integer('id_user');
             $table->double('prix');
-            $table->string('id_animal');
+            $table->string('animal');
             $table->integer('id_forfait');
             $table->timestamps();
         });
