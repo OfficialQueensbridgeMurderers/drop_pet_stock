@@ -17,12 +17,17 @@ class CreateProduitTab extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->integer('id_fournisseur');
-            $table->integer('id_animal');
+            $table->string('animal');
+            $table->string('category');
             $table->string('sku');
             $table->double('prix');
             $table->double('poids');
-            $table->integer('prix_vente');
-            $table->integer('cout_livraison');
+            $table->double('prix_vente');
+            $table->double('cout_livraison');
+            $table->string('img_path');
+            $table->string('img_height');
+            $table->string('img_width');
+            $table->boolean('is_featured');
             $table->timestamps();
         });
     }

@@ -17,7 +17,7 @@ class CreateTelemarketingTab extends Migration
             $table->increments('id');
             $table->integer('id_user');
             $table->string('email');
-            $table->integer('id_animal');
+            $table->integer('animal');
             $table->integer('id_forfait');
             $table->timestamps();
         });

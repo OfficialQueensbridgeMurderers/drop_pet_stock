@@ -17,7 +17,7 @@ class CreateSuppliersTab extends Migration
             $table->increments('id');
             $table->string('nom');
             $table->string('adresse');
-            $table->string('id_facture');
+            $table->string('email');
             $table->timestamps();
         });
     }
