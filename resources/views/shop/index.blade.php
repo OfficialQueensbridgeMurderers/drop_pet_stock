@@ -16,12 +16,12 @@
                         @foreach ($featuredItems as $item)
                             @if ($isTop === 0)
                             <a href="tameer">
-                            <img src={{ $item->img_path }} height="200" width="200" hspace="25">
+                            <img src="{{ url('/') }}{{ $item->img_path }}" height="200" width="200" hspace="25">
                             <a/>
                             <?php $isTop = 1; ?>
                             @else
                             <a href="sameer">
-                            <img src={{ $item->img_path }} height="200" width="200" hspace="25" class="top">
+                            <img src="{{ url('/') }}{{ $item->img_path }}" height="200" width="200" hspace="25" class="top">
                             <a/>
                             @endif
                         @endforeach
