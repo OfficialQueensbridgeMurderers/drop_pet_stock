@@ -36,8 +36,12 @@ class ShopController extends Controller
       return view('shop.index', ['categories' => $categories, 'featuredItems' => $featuredItems]);
   }
 
-  public function item(int $id, int $create)
+  public function item(int $id)
   {
+    $create = 0;
+    if ( ! empty($_GET['show'])){
+      $create = 1;
+    }
     if ( ! empty($_GET['text'])){
       $userId = Auth::id();
       DB::table('review')->insert([
@@ -46,7 +50,7 @@ class ShopController extends Controller
           'text' => $_GET['text'],
           'stars' => intval($_GET['rating'])
       ]);
-      return redirect()->action('ShopController@item', ['id' => 1, 'create' => 1]);
+      return redirect()->action('ShopController@item', ['id' => $id, 'create' => 1]);
     }
 
     $item = DB::table('produit')->where('id', $id)->first();

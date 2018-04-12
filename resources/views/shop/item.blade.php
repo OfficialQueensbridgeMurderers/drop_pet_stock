@@ -5,6 +5,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+          <?php $previous = 0; ?>
+          <a href="{{ url('/') }}/shop/category/{{ $item->category }}">
+          <button type="submit" class="btn btn-primary">
+              Back
+          </button>
+          </a><br>
             <div class="card">
                 <div class="card-header">{{ $item->nom }}</div>
                 <div class="card-body">
@@ -33,20 +39,22 @@
     <br>
     <div class="row justify-content-center">
         <div class="col-md-8">
-          @if ($create == 1)
+          @if ($create == 1 && !Auth::guest())
           <div class="card">
               <div class="card-header">Write a review</div>
               <div class="card-body">
-                <form action="{{ url('/') }}/shop/item/{{ $item->id }}/1" method="get">
+                <form action="{{ url('/') }}/shop/item/{{ $item->id }}" method="get">
+                  Rate this item
+                  <br>
                   1- 2- 3- 4- 5
                   <br>
-                  <input type="radio" name="rating" value="1">
-                  <input type="radio" name="rating" value="2">
-                  <input type="radio" name="rating" value="3">
-                  <input type="radio" name="rating" value="4">
-                  <input type="radio" name="rating" value="5">
+                  <input type="radio" name="rating" value="1" required>
+                  <input type="radio" name="rating" value="2" required>
+                  <input type="radio" name="rating" value="3" required>
+                  <input type="radio" name="rating" value="4" required>
+                  <input type="radio" name="rating" value="5" required>
                   <br>
-                  <textarea name="text" cols="40" rows="5"></textarea>
+                  <textarea name="text" cols="40" rows="5" required></textarea>
                   <br>
                   <br>
                   <button type="submit" class="btn btn-primary">
@@ -61,18 +69,20 @@
             <div class="card">
                 <div class="card-header">Reviews</div>
                 <div class="card-body">
-                  @if ($create != 1)
-                  <a href="{{ url('/') }}/shop/item/{{ $item->id }}/1">
+                  @if ($create != 1 && !Auth::guest())
+                    <form action="{{ url('/') }}/shop/item/{{ $item->id }}" method="get">
+                      <input type="text" name="show" value="show" style="display: none;">
                   <button type="submit" class="btn btn-primary" style="float: right;">
-                      Write a review
+                      + Write a review
                   </button>
-                </a>
-                @else
-                <a href="{{ url('/') }}/shop/item/{{ $item->id }}/0">
+                </form>
+                @elseif (!Auth::guest())
+                  <form action="{{ url('/') }}/shop/item/{{ $item->id }}" method="get">
+                    <input type="text" name="hide" value="hide" style="display: none;">
                 <button type="submit" class="btn btn-primary" style="float: right;">
-                    Hide review writing
+                     - Hide review writing
                 </button>
-              </a>
+              </form>
               @endif
                 @if (count($reviews) == 0)
                 No user has reviewed this item
