@@ -14,9 +14,9 @@
       <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="topnav">
           <a class="active" href="#home">Home</a>
-          <a href="#shop">Items Shop</a>
-          <a href="#profil">User Profil</a>
-          <a href="#forfaits">Packages</a>
+          <a href="{{ url('/') }}/shop">Items Shop</a>
+          <a href="/profil">User Profil</a>
+          <a href="/forfaits">Packages</a>
         </div>
         <div class="search_bar">
           <form class="form-inline my-2 my-lg-0" method="post"action="searchresult.php">
