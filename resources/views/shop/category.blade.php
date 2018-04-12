@@ -1,11 +1,16 @@
 @extends('layouts.app')
 @section('content')
-@include('shop.layout.shop')
 <link rel="stylesheet" type="text/css" href="css/shop.css">
 <div class="container">
   <section>
   <div class="row justify-content-left" style="float: left;">
       <div class="col-md-14">
+        <?php $previous = "/shop"; ?>
+        <a href="{{ url('/') }}/shop">
+        <button type="submit" class="btn btn-primary">
+            Back
+        </button>
+        </a><br>
           <div class="card">
               <div class="card-header">Sort by :</div>
               <form action="{{ $category }}" method="get">

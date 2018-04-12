@@ -17,7 +17,7 @@ class ReviewTab extends Migration
           $table->increments('id');
           $table->integer('id_user');
           $table->integer('id_produit');
-          $table->string('text');
+          $table->longText('text');
           $table->integer('stars');
           $table->timestamps();
       });
