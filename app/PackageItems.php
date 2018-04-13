@@ -1,0 +1,25 @@
+<?php
+
+namespace App;
+
+use Illuminate\Database\Eloquent\Model;
+
+class PackageItems extends Model
+{
+    protected $table = 'package_items';
+
+    public function produit()
+    {
+        return $this->hasOne('App\Produit', 'id', 'id_produit');
+    }
+
+    public function availablePackage()
+    {
+        return $this->belongsTo('App\AvailablePackages', 'id_package');
+    }
+
+    public function customPackage()
+    {
+        return $this->belongsTo('App\CustomPackages', 'id_package');
+    }
+}
