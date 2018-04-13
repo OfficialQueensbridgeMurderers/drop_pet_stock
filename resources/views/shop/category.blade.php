@@ -5,7 +5,6 @@
   <section>
   <div class="row justify-content-left" style="float: left;">
       <div class="col-md-14">
-        <?php $previous = "/shop"; ?>
         <a href="{{ url('/') }}/shop">
         <button type="submit" class="btn btn-primary">
             Back

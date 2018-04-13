@@ -15,7 +15,6 @@ class CreateAvailablepackagesTab extends Migration
     {
         Schema::create('availablepackages', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('id_user');
             $table->double('prix');
             $table->string('animal');
             $table->timestamps();
