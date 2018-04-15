@@ -13,13 +13,8 @@ class PackageItems extends Model
         return $this->hasOne('App\Produit', 'id', 'id_produit');
     }
 
-    public function availablePackage()
+    public function package()
     {
         return $this->belongsTo('App\AvailablePackages', 'id_package');
-    }
-
-    public function customPackage()
-    {
-        return $this->belongsTo('App\CustomPackages', 'id_package');
     }
 }
