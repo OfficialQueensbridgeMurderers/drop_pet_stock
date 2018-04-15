@@ -28,7 +28,7 @@
   background-color:#0099ff !important;
   position:relative !important;
   width:100% !important;
-  height:auto !important;
+
 }
 .login{
   color:#000099 !important;
@@ -57,4 +57,14 @@
 }
 .navbar-brand:hover{
   color:#ffffff !important;
+}
+footer{
+  color:#ffffff !important;
+  background-color:#000099 !important;
+  font-size:7pt !important;
+  font-weight: bold !important;
+  padding:20px 20px 0px 20px !important;
+  text-decoration:none !important;
+  position:relative !important;
+  width:100% !important;
 }

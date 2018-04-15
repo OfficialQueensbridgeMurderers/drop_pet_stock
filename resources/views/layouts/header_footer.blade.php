@@ -61,8 +61,8 @@
       <div class="login">
          <ul class="nav navbar-nav navbar-right">
            @guest
-           <li><a class="login" href="{{ route('login') }}"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-           <li><a class="login" href="{{ route('register') }}"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+           <li><a class="login" href="{{ route('login') }}"><span class="glyphicon glyphicon-log-in"></span>  Login</a></li>
+           <li><a class="login" href="{{ route('register') }}"><span class="glyphicon glyphicon-user"></span>  Register</a></li>
            @else
            <li>
              <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
@@ -109,5 +109,13 @@
   <main>
     @yield('content')
   </main>
+  <footer>
+    <p>Copyright © 2018 DPS Inc. ® (Montreal,Canada)
+    Copyright laws make it illegal to copy any form of original work without the permission of the author.
+      The author or creator of a work has certain legal rights. These rights apply even if the work does not contain
+      a statement noting that the work is copyrighted. The general rules of copyright also apply to downloading information
+      from the Internet and using computer software.</p>
+
+  </footer>
 </body>
 </html>
