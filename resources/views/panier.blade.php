@@ -101,7 +101,7 @@ echo '<?xml version="1.0" encoding="utf-8"?>';?>
 	         echo "<td>".htmlspecialchars($_SESSION['panier']['libelleProduit'][$i])."</ td>";
 	         echo "<td><input type=\"text\" size=\"4\" name=\"q[]\" value=\"".$_SESSION['panier']['qteProduit'][$i]."\"/></td>";
 	         echo "<td>".htmlspecialchars($_SESSION['panier']['prixProduit'][$i])."</td>";
-	         echo "<td><a href=\"".htmlspecialchars("panier.php?action=suppression&l=".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">XX</a></td>";
+	         echo "<td><a href=\"".htmlspecialchars("panier/".rawurlencode($_SESSION['panier']['libelleProduit'][$i]))."\">XX</a></td>";
 	         echo "</tr>";
 	      }
 	?>

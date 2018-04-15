@@ -19,8 +19,31 @@ Route::get('/faq', function () {
     return view('faq');
 });
 
-Route::get('/inscription', 'InscriptionController@formulaire');
-Route::post('/inscription', 'InscriptionController@traitement');
+Route::get('/panier', function () {
+    return view('panier');
+});
+Route::post('/panier', function () {
+    return view('panier');
+});
+
+Route::get('/panier.php', function () {
+
+    return view('panier');
+});
+Route::post('/panier.php', function () {
+    return view('panier');
+});
+
+Route::get('/panier/{id}', function () {
+	$id = request('id');
+	$_SESSION['panier']['qteProduit'][$id] = 0;
+	return view('panier');
+});
+Route::post('/panier/{id}', function () {
+	$id = request('id');
+	$_SESSION['panier']['qteProduit'][$id] = 0;
+	return view('panier');
+});
 
 Auth::routes();
 
