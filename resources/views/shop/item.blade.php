@@ -5,7 +5,6 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-          <?php $previous = 0; ?>
           <a href="{{ url('/') }}/shop/category/{{ $item->category }}">
           <button type="submit" class="btn btn-primary">
               Back

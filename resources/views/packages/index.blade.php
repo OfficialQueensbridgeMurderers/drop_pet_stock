@@ -4,6 +4,17 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+          <a href="{{ url('/') }}/packages/delivery_box">
+          <button type="submit" class="btn btn-primary" style="float: right;">
+              Delivery box
+          </button>
+          </a>
+          <a href="{{ url('/') }}/packages">
+          <button type="submit" class="btn btn-primary">
+              Back
+          </button>
+          </a>
+          <br>
             <div class="card">
                 <div class="card-header">Monthly delivery service</div>
 
