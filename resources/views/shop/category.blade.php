@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.header_footer')
 @section('content')
 <link rel="stylesheet" type="text/css" href="css/shop.css">
 <div class="container">
