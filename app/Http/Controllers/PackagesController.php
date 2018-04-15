@@ -36,6 +36,14 @@ class PackagesController extends Controller
       return view('packages.custom.index', ['customPackages' => $customPackages]);
   }
 
+  public function toggle(int $id)
+  {
+      $result = \App\CustomPackages::where('id', $id)->first();
+      $result->is_activated = !($result->is_activated);
+      $result->save();
+      return redirect()->back();
+  }
+
   public function create()
   {
       if ( ! empty($_GET['name'])){
@@ -44,6 +52,7 @@ class PackagesController extends Controller
         DB::table('custompackages')->insert([
           'id_user' => $userId,
           'name' => $name,
+          'is_activated' => false,
         ]);
         return redirect()->action('PackagesController@custom');
       }
@@ -78,8 +87,13 @@ class PackagesController extends Controller
   }
 
   public function remove(int $id){
-    \App\CustomPackageItems::destroy($id);
-    return redirect()->action('PackagesController@custom');
+    if ( ! empty($_GET['custom'])){
+      \App\CustomPackageItems::destroy($id);
+    }
+    if ( ! empty($_GET['premade'])){
+      \App\UserPackage::destroy($id);
+    }
+    return redirect()->back();
   }
 
   public function delete(int $id)
@@ -94,6 +108,8 @@ class PackagesController extends Controller
   {
       $userId = Auth::id();
       $userPackages = \App\UserPackage::where('id_user', $userId)->get();
-      return view('packages.delivery_box.index', ['userPackages' => $userPackages]);
+      $customPackages = \App\CustomPackages::where('id_user', $userId)->get();
+      $nbCustom = count(\App\CustomPackages::where(['id_user'=> $userId, 'is_activated' => true])->get());
+      return view('packages.delivery_box.index', ['userPackages' => $userPackages, 'customPackages' => $customPackages, 'nbCustom' => $nbCustom]);
   }
 }

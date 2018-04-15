@@ -4,6 +4,12 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+          <a href="{{ url('/') }}/packages/custom">
+          <button type="submit" class="btn btn-primary">
+              Back
+          </button>
+          </a>
+          <br>
             <div class="card">
                 <div class="card-header">Create a custom package</div>
                 <div class="card-body">

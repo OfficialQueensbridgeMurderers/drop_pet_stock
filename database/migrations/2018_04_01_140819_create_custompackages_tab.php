@@ -17,6 +17,7 @@ class CreateCustompackagesTab extends Migration
             $table->increments('id');
             $table->integer('id_user');
             $table->string('name');
+            $table->boolean('is_activated');
             $table->timestamps();
         });
     }
