@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateAvailablepackagesTab extends Migration
+class UserPackageTab extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateAvailablepackagesTab extends Migration
      */
     public function up()
     {
-        Schema::create('availablepackages', function (Blueprint $table) {
-            $table->increments('id');
-            $table->double('prix');
-            $table->string('name');
-            $table->timestamps();
-        });
+      Schema::create('user_package', function (Blueprint $table) {
+          $table->increments('id');
+          $table->integer('id_package');
+          $table->integer('id_user');
+          $table->timestamps();
+      });
     }
 
     /**
@@ -28,6 +28,6 @@ class CreateAvailablepackagesTab extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('availablepackages');
+        Schema::dropIfExists('user_package');
     }
 }

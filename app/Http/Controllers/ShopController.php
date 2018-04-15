@@ -38,30 +38,28 @@ class ShopController extends Controller
 
   public function item(int $id)
   {
+    $userId = Auth::id();
     $create = 0;
     if ( ! empty($_GET['show'])){
       $create = 1;
     }
     if ( ! empty($_GET['text'])){
-      $userId = Auth::id();
       DB::table('review')->insert([
           'id_user' => $userId,
           'id_produit' => $id,
           'text' => $_GET['text'],
           'stars' => intval($_GET['rating'])
       ]);
-      return redirect()->action('ShopController@item', ['id' => $id, 'create' => 1]);
+      return redirect()->action('ShopController@item', ['id' => $id]);
     }
+
+    $customPackages = \App\CustomPackages::where('id_user', $userId)->get();
 
     $item = DB::table('produit')->where('id', $id)->first();
     $reviews = DB::table('review')->where('id_produit', $id)->get();
-    $users = array();
-    foreach ($reviews as $review) {
-      $user = DB::table('users')->where('id', $review->id_user)->first();
-      array_push($users, $user);
-    }
+    $reviews = \App\Review::where('id_produit', $id)->get();
 
-    return view('shop.item', ['item' => $item, 'reviews' => $reviews, 'users' => $users, 'create' => $create]);
+    return view('shop.item', ['item' => $item, 'reviews' => $reviews, 'create' => $create, 'customPackages' => $customPackages]);
   }
 
   public function category(string $category)

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class PackageItems extends Migration
+class CustomPackageItems extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class PackageItems extends Migration
      */
      public function up()
      {
-       Schema::create('package_items', function (Blueprint $table) {
+       Schema::create('custom_package_items', function (Blueprint $table) {
            $table->increments('id');
            $table->integer('id_package');
            $table->integer('id_produit');
@@ -29,6 +29,6 @@ class PackageItems extends Migration
       */
      public function down()
      {
-         Schema::dropIfExists('package_items');
+         Schema::dropIfExists('custom_package_items');
      }
 }
