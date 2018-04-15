@@ -6,17 +6,24 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Available packages</div>
-                <?php $i = 0; ?>
                 @foreach ($packages as $package)
+                @if ($package->id != 1)
+                <hr>
+                @endif
                 <div class="card-body">
-                  Package #{{ $package->id }}
+                  {{ $package->name }} - {{ $package->prix }} $
+                  <form action="{{ url('/') }}/packages/available" method="get">
+                    <input type="text" name="addPackage" value="{{ $package->id }}" style="display: none;">
+                <button type="submit" class="btn btn-primary" style="float: right;">
+                    Add to delivery box
+                </button>
+              </form>
                   <br>
                     @foreach ($package->items as $item)
-                      {{ $item->produit->nom }}
+                      {{ $item->produit->nom }} x{{ $item->quantity }}
                       <br>
                     @endforeach
                 </div>
-                <?php $i = $i+1; ?>
                 @endforeach
             </div>
         </div>

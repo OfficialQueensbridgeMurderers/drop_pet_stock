@@ -23,6 +23,13 @@ Route::resource('shop', 'ShopController');
 Route::resource('back', 'BackController');
 Route::get('packages', 'PackagesController@index');
 Route::get('packages/available', 'PackagesController@available');
+Route::get('packages/custom', 'PackagesController@custom');
+Route::get('packages/custom/create', 'PackagesController@create');
+Route::get('packages/custom/add/{id_package}/{id_produit}', 'PackagesController@add');
+Route::get('packages/custom/update/{id}', 'PackagesController@update');
+Route::get('packages/custom/remove/{id}', 'PackagesController@remove');
+Route::get('packages/custom/delete/{id}', 'PackagesController@delete');
+Route::get('packages/delivery_box', 'PackagesController@deliveryBox');
 Route::get('/shop/item/{id}', 'ShopController@item');
 Route::get('/shop/category/{category}', 'ShopController@category');
 Route::get('/search',[

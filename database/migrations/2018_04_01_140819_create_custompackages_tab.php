@@ -16,9 +16,7 @@ class CreateCustompackagesTab extends Migration
        Schema::create('custompackages', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('id_user');
-            $table->double('prix');
-            $table->string('animal');
-            $table->integer('id_forfait');
+            $table->string('name');
             $table->timestamps();
         });
     }
