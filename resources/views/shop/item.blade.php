@@ -26,9 +26,11 @@
                       Shipping fee : {{ number_format($item->cout_livraison, 2, '.', ',') }}<br/>
                       <b>Total : {{ number_format($item->cout_livraison + $item->prix_vente, 2, '.', ',') }}</b><br/>
                       <br/>
+					  <form method="get" action="{{ url('/') }}/cart/add/{{$item->id}}">
                       <button type="submit" class="btn btn-primary">
                           Add to cart
                       </button>
+					  </form>
                     </div>
                   </section>
                 </div>

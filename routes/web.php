@@ -15,35 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/faq', function () {
-    return view('faq');
-});
-
-Route::get('/panier', function () {
-    return view('panier');
-});
-Route::post('/panier', function () {
-    return view('panier');
-});
-
-Route::get('/panier.php', function () {
-
-    return view('panier');
-});
-Route::post('/panier.php', function () {
-    return view('panier');
-});
-
-Route::get('/panier/{id}', function () {
-	$id = request('id');
-	$_SESSION['panier']['qteProduit'][$id] = 0;
-	return view('panier');
-});
-Route::post('/panier/{id}', function () {
-	$id = request('id');
-	$_SESSION['panier']['qteProduit'][$id] = 0;
-	return view('panier');
-});
 
 Auth::routes();
 
@@ -59,3 +30,4 @@ Route::get('/search',[
   'as' => 'api.search',
   'uses' => 'Api/SearchController@search'
 ]);
+Route::get('/cart/add/{id}','CartController@ajouterArticle');
