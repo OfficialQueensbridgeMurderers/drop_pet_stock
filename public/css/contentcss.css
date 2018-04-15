@@ -1,0 +1,191 @@
+.full-width-image {
+      height: 700px !important;
+      background: url('../../resources/images/pets.jpg') center center no-repeat;
+      background-size: cover;
+    }
+
+.full-width-bgrd{
+      height: 700px !important;
+        background: linear-gradient(to bottom right, #0099ff 50%, #000099 50%);
+      background-size: cover;
+    }
+
+.full-width-bgrd1{
+      height: 700px !important;
+      background: #0099ff;
+      background-size: cover;
+    }
+
+    /* margin for super() DIV/ */
+
+.SuperDiv{
+      margin-left: 10%;
+      margin-right: 10%;
+
+
+    }
+    .p{
+      margin-top: 15%;
+      margin-right: 5px;
+      margin-left: 5px;
+    }
+
+
+    .buttonS{
+
+      border-radius: 25px;
+      text-align: center;
+      border: 2px solid blue;
+      box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+      background-color: Transparent;
+      padding: 16px 32px;
+      font-size: 16px;
+        -webkit-transition-duration: 0.4s; /* Safari */
+         transition-duration: 0.4s;
+         color: white;
+
+    }
+    .buttonS:hover {
+       background: linear-gradient(to top right, #0099ff -13%, #99ccff 106%);
+        color: black;
+        border: none;
+
+
+    }
+
+    /* Create three equal columns that floats next to each other */
+    .column {
+        float: left;
+        width: 30%;
+        padding: 10px;
+        height: 400px;
+        margin-left: 15px;
+        margin-top: 12%;
+        border-radius: 25px;
+        background: linear-gradient(to top right, #0099ff -13%, #99ccff 106%);
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        color: white;
+
+          -webkit-transition: all 200ms ease-in;
+          -webkit-transform: scale(1);
+          -ms-transition: all 200ms ease-in;
+          -ms-transform: scale(1);
+          -moz-transition: all 200ms ease-in;
+          -moz-transform: scale(1);
+          transition: all 200ms ease-in;
+          transform: scale(1)
+
+    }
+    .column:hover {
+
+
+      box-shadow: 0px 0px 150px #000000;
+        z-index: 2;
+      -webkit-transition: all 400ms ease-in;
+        -webkit-transform: scale(1.5);
+        -ms-transition: all 400ms ease-in;
+        -ms-transform: scale(1.1);
+        -moz-transition: all 400ms ease-in;
+        -moz-transform: scale(1.1);
+        transition: all 400ms ease-in;
+        transform: scale(1.1);
+
+
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+
+    }
+    /* Create three equal columns that floats next to each other */
+    .column2 {
+        float: left;
+        width: 30%;
+        padding: 10px;
+        height: 500px;
+
+        margin-top: 12%;
+
+        background: linear-gradient(to top, #ffffff 70%, #000099 50%);
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        color: #000099;
+
+          -webkit-transition: all 200ms ease-in;
+          -webkit-transform: scale(1);
+          -ms-transition: all 200ms ease-in;
+          -ms-transform: scale(1);
+          -moz-transition: all 200ms ease-in;
+          -moz-transform: scale(1);
+          transition: all 200ms ease-in;
+          transform: scale(1)
+
+    }
+    .column2:hover {
+
+
+      box-shadow: 0px 0px 150px #000000;
+        z-index: 2;
+      -webkit-transition: all 400ms ease-in;
+        -webkit-transform: scale(1.5);
+        -ms-transition: all 400ms ease-in;
+        -ms-transform: scale(1.1);
+        -moz-transition: all 400ms ease-in;
+        -moz-transform: scale(1.1);
+        transition: all 400ms ease-in;
+        transform: scale(1.1);
+
+
+    }
+    .p3 {
+        color: white;
+
+        margin-top:120px;
+        color:#000099 ;
+    }
+
+    .p2 {
+        color: white;
+        margin-top:50px;
+        margin-top:20px;
+
+    }
+
+    /* Clear floats after the columns */
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+
+    }
+
+    .buttonS2{
+
+        border-radius: 25px;
+        text-align: center;
+        border: 2px solid blue;
+        box-shadow: 1px 2px 10px rgba(0, 0, 0, 0.5);
+        background-color: #000099;
+        padding: 16px 32px;
+        font-size: 16px;
+          -webkit-transition-duration: 0.4s; /* Safari */
+            transition-duration: 0.4s;
+            color: white;
+
+}
+
+    /* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+    @media screen and (max-width: 600px) {
+        .column {
+            width: 100%;
+        }
+    }
+    @media screen and (max-width: 600px) {
+        .column2 {
+            width: 100%;
+        }
+    }
