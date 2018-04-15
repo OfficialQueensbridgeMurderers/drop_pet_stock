@@ -34,3 +34,4 @@ Route::get('/search',[
   'as' => 'api.search',
   'uses' => 'Api/SearchController@search'
 ]);
+Route::get('/cart/add/{id}','CartController@ajouterArticle');
