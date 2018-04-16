@@ -15,5 +15,10 @@ class AvailablePackagesSeeder extends Seeder
           'prix' => 30,
           'animal' => "Cat",
       ]);
+
+      DB::table('availablepackages')->insert([
+          'prix' => 40,
+          'animal' => "Dog",
+      ]);
     }
 }
