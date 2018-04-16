@@ -1,7 +1,7 @@
-@extends('layouts.header_footer_layout')
+@extends('layouts.header_footer')
 
 @section('content')
-<div class="container">
+  <div>
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="margin-top:20px;">

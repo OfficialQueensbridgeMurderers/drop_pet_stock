@@ -13,15 +13,25 @@ class PackageItemsSeeder extends Seeder
     {
       DB::table('package_items')->insert([
           'id_package' => 1,
-          'is_custom' => false,
           'id_produit' => 1,
           'quantity' => 1
       ]);
 
       DB::table('package_items')->insert([
           'id_package' => 1,
-          'is_custom' => false,
           'id_produit' => 2,
+          'quantity' => 2
+      ]);
+
+      DB::table('package_items')->insert([
+          'id_package' => 2,
+          'id_produit' => 3,
+          'quantity' => 1
+      ]);
+
+      DB::table('package_items')->insert([
+          'id_package' => 2,
+          'id_produit' => 4,
           'quantity' => 2
       ]);
     }

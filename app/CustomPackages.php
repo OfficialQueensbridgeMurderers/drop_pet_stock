@@ -10,6 +10,6 @@ class CustomPackages extends Model
 
     public function items()
     {
-        return $this->hasMany('App\PackageItems', 'id_package');
+        return $this->hasMany('App\CustomPackageItems', 'id_package');
     }
 }

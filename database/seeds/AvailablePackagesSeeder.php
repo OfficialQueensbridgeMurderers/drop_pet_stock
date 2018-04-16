@@ -13,7 +13,12 @@ class AvailablePackagesSeeder extends Seeder
     {
       DB::table('availablepackages')->insert([
           'prix' => 30,
-          'animal' => "Cat",
+          'name' => "Cat package",
+      ]);
+
+      DB::table('availablepackages')->insert([
+          'prix' => 20,
+          'name' => "Dog package",
       ]);
 
       DB::table('availablepackages')->insert([
