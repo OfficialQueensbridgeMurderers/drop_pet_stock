@@ -104,7 +104,7 @@
    </form>
 </div>
 
-  <main class="maincontent">    
+  <main class="maincontent">
     @yield('content')
   </main>
   <footer>

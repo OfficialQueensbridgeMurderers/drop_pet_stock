@@ -1,6 +1,13 @@
+body {
+  background: url(../images/background.jpg) no-repeat !important;
+  background-size:cover !important;
+  height:100% !important;
+}
+
 .maincontent{
   margin-top:3% !important;
-  background-image: url(../images/background.jpg) !important;
+  width:100% !important;
+  height:100% !important;
 }
 
 .search-form-wrapper {
@@ -57,8 +64,9 @@
 }
 .navbar-brand:focus{
   color:#000099 !important;
-  border-bottom:2px solid #ffffff !important;
-  margin-bottom:7px !important;
+  border-bottom:2px solid #000099 !important;
+  margin-bottom:3px !important;
+  height:40px !important;
 }
 .navbar-brand:hover{
   color:#ffffff !important;
@@ -71,5 +79,7 @@ footer{
   padding:20px 20px 0px 20px !important;
   text-decoration:none !important;
   position:relative !important;
+  bottom:0 !important;
   width:100% !important;
+  height:8% !important;
 }

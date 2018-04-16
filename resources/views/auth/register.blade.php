@@ -1,7 +1,7 @@
 @extends('layouts.header_footer')
 
 @section('content')
-<div>
+<div class="formbox">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">

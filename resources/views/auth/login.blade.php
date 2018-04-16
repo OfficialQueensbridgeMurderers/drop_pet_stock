@@ -1,12 +1,12 @@
 @extends('layouts.header_footer')
 
 @section('content')
-  <div>
+  <div class="formbox">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card" style="margin-top:20px;">
                 <div class="card-header">{{ __('Login') }}</div>
-                <div class="card-body">
+                  <div class="card-body">
                     <form method="POST" action="{{ route('login') }}">
                         @csrf
 
