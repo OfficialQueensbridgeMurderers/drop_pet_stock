@@ -18,6 +18,7 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::resource('shop', 'ShopController');
 Route::resource('back', 'BackController');
 Route::get('cart', 'CartController@index');
+Route::get('profile', 'ProfileController@index');
 Route::get('packages', 'PackagesController@index');
 Route::get('packages/checkout', 'PackagesController@checkout');
 Route::get('packages/available', 'PackagesController@available');

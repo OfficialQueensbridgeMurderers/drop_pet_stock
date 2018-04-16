@@ -59,7 +59,7 @@
                   Items :
                   <br>
                   @foreach ($customPackage->items as $item)
-                    {{ $item->produit->nom }} x{{ $item->quantity }}
+                    {{ $item->produit->nom }} x{{ $item->quantity }} - {{ $item->produit->prix_vente }} $
                     <br>
                   @endforeach
                 </div>

@@ -33,7 +33,7 @@
                 </button>
 			</form>
 		</td>
-		<td>{{$item->produit->prix}}</td>
+		<td>{{$item->produit->prix_vente}}</td>
 		<td>
 			<form method="get" action="{{ url('/') }}/cart/sup/{{$item->id}}">
                 <button type="submit">
@@ -44,15 +44,19 @@
 	@endforeach
 	<?php
 	$priceTotal=0;
+  $deliveryPriceTotal=0;
 	foreach($cartItems as $p){
-	$price = $p->produit->prix * $p->quantity;
+	$price = $p->produit->prix_vente * $p->quantity;
 	$priceTotal = $priceTotal + $price;
+  $deliveryPriceTotal = $deliveryPriceTotal + $p->produit->cout_livraison;
 	}
 	?>
 
 	      <tr><td colspan=2> </td>
 	      <td colspan=2>
-	      Total :  <?php echo $priceTotal ?> $
+	      Subtotal : {{ $priceTotal }} $<br>
+        Delivery fees : {{ $deliveryPriceTotal }} $<br>
+        <b>Total : {{ $priceTotal + $deliveryPriceTotal }} $</b>
 	      </td></tr>
 </table>
 </body>

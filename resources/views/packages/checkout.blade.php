@@ -18,22 +18,34 @@
                     Postal code : <input type="text" name="address"><br><br>
                     Address : <input type="text" name="address"><br><br>
 
-                    Delivery box review :
-                    <table style="width:100%">
+                    <a style="font-size: 200%">Delivery box review :</a>
+                    <table style="width:25%">
+                    @foreach ($customPackages as $package)
+                    @if ($package->is_activated && count($package->items) != 0)
                     <tr>
-                      <th>Firstname</th>
-                      <th>Lastname</th>
-                      <th>Age</th>
+                      <th>Package : {{ $package->name }}</th>
+                      <th>-</th>
+                      <th>-</th>
                     </tr>
                     <tr>
-                      <td>Jill</td>
-                      <td>Smith</td>
-                      <td>50</td>
+                      <th>Items :</th>
+                      <th>Quantity :</th>
+                      <th>Price :</th>
                     </tr>
+                    @foreach ($package->items as $item)
                     <tr>
-                      <td>Eve</td>
-                      <td>Jackson</td>
-                      <td>94</td>
+                      <td>{{ $item->produit->nom }}</td>
+                      <td>{{ $item->quantity }}</td>
+                      <td>{{ $item->produit->prix_vente }}</td>
+                    </tr>
+                    @endforeach
+                    @endif
+                    @endforeach
+                    <tr>
+                      <td><br>
+                        Subtotal : {{ $produits }}<br>
+                        Delivery fee : {{ $livraison }}<br>
+                        <b>Total : {{ $total }}</b></td>
                     </tr>
                   </table>
                     <br>
@@ -62,8 +74,8 @@
 
         style: {
             label: 'pay',
-            size:  'small', // small | medium | large | responsive
-            shape: 'rect',   // pill | rect
+            size:  'medium', // small | medium | large | responsive
+            shape: 'pill',   // pill | rect
             color: 'gold'   // gold | blue | silver | black
         },
 
@@ -71,8 +83,8 @@
         // Create a PayPal app: https://developer.paypal.com/developer/applications/create
 
         client: {
-            sandbox:    'AZDxjDScFpQtjWTOUtWKbyN_bDt4OgqaF4eYXlewfBP4-8aqX3PiV8e1GWU6liB2CUXlkA59kJXE7M6R',
-            production: '<insert production client id>'
+            sandbox:    'AVPmhEbwwz-OJIXfZFkrZRaaAyR8IIxIoZ3ahV5flQcFzWrI9_2EtHaFL8GFhDd4jxSD3vEK-37VVowg',
+            production: 'AVPmhEbwwz-OJIXfZFkrZRaaAyR8IIxIoZ3ahV5flQcFzWrI9_2EtHaFL8GFhDd4jxSD3vEK-37VVowg'
         },
 
         // Wait for the PayPal button to be clicked
@@ -82,7 +94,7 @@
                 payment: {
                     transactions: [
                         {
-                            amount: { total: '0.01', currency: 'USD' }
+                            amount: { total: '0.01', currency: 'CAN' }
                         }
                     ]
                 }
