@@ -15,7 +15,6 @@ Route::get('/', function () {
 
 Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('cart', 'CartController');
 Route::resource('shop', 'ShopController');
 Route::resource('back', 'BackController');
 Route::get('cart', 'CartController@index');
@@ -35,4 +34,7 @@ Route::get('/search',[
   'as' => 'api.search',
   'uses' => 'Api/SearchController@search'
 ]);
+Route::get('/cart','CartController@index');
 Route::get('/cart/add/{id}','CartController@ajouterArticle');
+Route::get('/cart/sup/{id}','CartController@supprimerArticle');
+Route::get('/cart/modifier/{id}','CartController@modifier');
