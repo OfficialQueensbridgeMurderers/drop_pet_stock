@@ -16,6 +16,7 @@
 		<td>nom</td>
 		<td>Quantité</td>
 		<td>Prix Unitaire</td>
+		<td>Coût de livraison</td>
 		<td>Action</td>
 	</tr>
 	
@@ -30,7 +31,8 @@
                 </button>
 			</form>
 		</td>
-		<td>{{$item->produit->prix}}</td>
+		<td>{{$item->produit->prix_vente}} $</td>
+		<td>{{$item->produit->cout_livraison}} $</td>
 		<td>
 			<form method="get" action="{{ url('/') }}/cart/sup/{{$item->id}}">
                 <button type="submit">
@@ -42,7 +44,7 @@
 	<?php
 	$priceTotal=0;	
 	foreach($cartItems as $p){
-	$price = $p->produit->prix * $p->quantity;
+	$price = ( $p->produit->prix_vente + $p->produit->cout_livraison ) * $p->quantity;
 	$priceTotal = $priceTotal + $price;
 	}
 	?>
@@ -51,6 +53,13 @@
 	      <td colspan=2>
 	      Total :  <?php echo $priceTotal ?> $
 	      </td></tr>
+		  <tr><td colspan=2>
+		  <form method="get" action="{{ url('/') }}/LeChemain">
+                <button type="submit">
+                          Payer
+                </button>
+			</form>
+			</td></tr>
 </table>
 </body>
 </html>
