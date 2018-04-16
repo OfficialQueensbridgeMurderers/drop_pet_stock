@@ -11,11 +11,12 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-Route::resource('cart', 'CartController');
+
+route::get('/home', 'HomeController@index');
+route::post('/home', [ 'uses' => 'HomeController@store',
+'as' => 'home.store'
+
+
+]);

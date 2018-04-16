@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Mail;
+
 
 class HomeController extends Controller
 {
@@ -13,7 +15,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('guest');
     }
 
     /**
@@ -25,4 +27,30 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
+    public function store(Request $request) 
+    {
+
+        
+   
+        $this->validate($request,[
+            'firstname' => 'required',
+            'lastname' => 'required',
+            'subject' => 'required'
+        ]);
+
+        Mail::send('emails.contact-message', [
+            'msg' => $request->message
+        ], function($mail) use ($request)  {
+
+            $mail->from($request->subject, $request->firstname);
+            $mail->to('merouanehadid@gmail.com')->subject('message contact');
+
+        });
+        return redirect()->to('/home');
+    }
+
+
+
+
 }
