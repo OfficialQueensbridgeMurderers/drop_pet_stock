@@ -31,6 +31,8 @@
                   </form>
                   Premade package : {{ $userPackage->package->name }}
                   <br>
+                  Price : {{ $userPackage->package->prix }} $
+                  <br>
                   <br>
                   Items :
                   <br>
@@ -51,17 +53,26 @@
                   </form>
                   Custom package : {{ $customPackage->name }}
                   <br>
+                  Price : {{ $customPackage->price }} $
+                  <br>
                   <br>
                   Items :
                   <br>
                   @foreach ($customPackage->items as $item)
-                    {{ $item->produit->nom }} x{{ $item->quantity }}
+                    {{ $item->produit->nom }} x{{ $item->quantity }} - {{ $item->produit->prix_vente }} $
                     <br>
                   @endforeach
                 </div>
                 @endif
                 @endforeach
             </div>
+            @if (count($userPackages) != 0 || $nbCustom != 0)
+            <form action="{{ url('/') }}/packages/checkout" method="get">
+              <button type="submit" class="btn btn-primary" style="float: right; margin-top: 10px;">
+                  Subscribe to our monthly delivery service
+              </button>
+            </form>
+            @endif
         </div>
     </div>
 </div>

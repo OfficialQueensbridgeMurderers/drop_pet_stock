@@ -16,7 +16,7 @@
           </a>
           <br>
             <div class="card">
-                <div class="card-header">Monthly delivery service</div>
+                <div class="card-header">Monthly pet supplies delivery service</div>
 
                 <div class="card-body">
                     Choose one of our premade packages or create your own to get started. Add your package(s) to your delivery box and we will deliver them to your door every month!

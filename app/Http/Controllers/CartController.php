@@ -14,7 +14,7 @@ class CartController extends Controller
         return view('cart.index', ['cartItems' => $cartItems]);
     }
 	public function ajouterArticle(int $id){
-				
+
 		DB::table('cart_item')->insert(
 		['id_user' => Auth::user()->id,
 		 'id_produit' => $id,
@@ -22,10 +22,10 @@ class CartController extends Controller
 		);
 		return redirect()->action('CartController@index');
 	}
-	
-	public function supprimerArticle(int $id){	
+
+	public function supprimerArticle(int $id){
 		\App\CartItem::destroy($id);
-		return redirect()->action('CartController@index');		
+		return redirect()->action('CartController@index');
 	}
 	public function modifier(int $id){
 		if ( ! empty($_GET['nombre'])){
@@ -34,6 +34,11 @@ class CartController extends Controller
 		$cartItem->quantity = $qty;
 		$cartItem->save();
       }
-		return redirect()->action('CartController@index');		
+		return redirect()->action('CartController@index');
+	}
+
+  public function checkout(){
+        $cartItems = \App\CartItem::where('id_user', Auth::user()->id)->get();
+        return view('cart.checkout', ['cartItems' => $cartItems]);
 	}
 }

@@ -23,6 +23,7 @@ class PackagesController extends Controller
             'id_user' => $userId,
             'id_package' => intval($id),
         ]);
+        return redirect()->back();
       }
 
       $packages = \App\AvailablePackages::all();
@@ -109,7 +110,38 @@ class PackagesController extends Controller
       $userId = Auth::id();
       $userPackages = \App\UserPackage::where('id_user', $userId)->get();
       $customPackages = \App\CustomPackages::where('id_user', $userId)->get();
-      $nbCustom = count(\App\CustomPackages::where(['id_user'=> $userId, 'is_activated' => true])->get());
+      $customCounter = \App\CustomPackages::where(['id_user'=> $userId, 'is_activated' => true])->get();
+      $nbCustom = 0;
+      foreach ($customCounter as $custom) {
+        if (count($custom->items) != 0) {
+          $nbCustom++;
+        }
+      }
       return view('packages.delivery_box.index', ['userPackages' => $userPackages, 'customPackages' => $customPackages, 'nbCustom' => $nbCustom]);
+  }
+
+  public function checkout()
+  {
+      $total = 0;
+      $livraison = 0;
+      $produits = 0;
+      $userId = Auth::id();
+      $userPackages = \App\UserPackage::where('id_user', $userId)->get();
+      $customPackages = \App\CustomPackages::where('id_user', $userId)->get();
+      foreach($userPackages as $package){
+        foreach ($package->package->items as $item) {
+          $produits += $item->produit->prix_vente;
+          $livraison += $item->produit->cout_livraison;
+          $total = $livraison + $produits;
+        }
+      }
+      foreach($customPackages as $package){
+        foreach ($package->items as $item) {
+          $produits += $item->produit->prix_vente;
+          $livraison += $item->produit->cout_livraison;
+          $total = $livraison + $produits;
+        }
+      }
+      return view('packages.checkout', ['userPackages' => $userPackages, 'customPackages' => $customPackages, 'produits' => $produits, 'livraison' => $livraison, 'total' => $total]);
   }
 }

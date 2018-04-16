@@ -52,9 +52,9 @@
          <span class="icon-bar"></span>
          </button>
          <a class="navbar-brand-img navbar-left" href="{{ base_path() }}"><img src="{{ url('/') }}/storage/dps-banner.png" alt="dps-banner.png"/></a>
-         <a class="navbar-brand" href="#items">Items Shop</a>
-         <a class="navbar-brand" href="#profil">User Profil</a>
-         <a class="navbar-brand" href="#package">Packages</a>
+         <a class="navbar-brand" href="{{ url('/') }}/shop">Items Shop</a>
+         <a class="navbar-brand" href="{{ url('/') }}/profile">User Profil</a>
+         <a class="navbar-brand" href="{{ url('/') }}/packages">Packages</a>
       </div><!--/navheader-->
       <div class="login">
          <ul class="nav navbar-nav navbar-right">
@@ -104,7 +104,7 @@
    </form>
 </div>
 
-  <main class="maincontent">    
+  <main class="maincontent">
     @yield('content')
   </main>
   <footer>

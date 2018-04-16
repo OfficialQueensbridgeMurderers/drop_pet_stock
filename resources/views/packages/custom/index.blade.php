@@ -90,7 +90,6 @@
                         </button>
                       </form>
                       <br>
-                      <br>
                     @endforeach
                     @if (count($package->items) == 0)
                       This package doesn't contain any item
