@@ -40,3 +40,4 @@ Route::get('/cart','CartController@index');
 Route::get('/cart/add/{id}','CartController@ajouterArticle');
 Route::get('/cart/sup/{id}','CartController@supprimerArticle');
 Route::get('/cart/modifier/{id}','CartController@modifier');
+Route::get('/cart/checkout','CartController@checkout');

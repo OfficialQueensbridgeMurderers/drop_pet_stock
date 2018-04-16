@@ -129,6 +129,13 @@ class PackagesController extends Controller
       $userPackages = \App\UserPackage::where('id_user', $userId)->get();
       $customPackages = \App\CustomPackages::where('id_user', $userId)->get();
       foreach($userPackages as $package){
+        foreach ($package->package->items as $item) {
+          $produits += $item->produit->prix_vente;
+          $livraison += $item->produit->cout_livraison;
+          $total = $livraison + $produits;
+        }
+      }
+      foreach($customPackages as $package){
         foreach ($package->items as $item) {
           $produits += $item->produit->prix_vente;
           $livraison += $item->produit->cout_livraison;

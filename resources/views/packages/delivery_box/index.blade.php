@@ -66,11 +66,13 @@
                 @endif
                 @endforeach
             </div>
+            @if (count($userPackages) != 0 || $nbCustom != 0)
             <form action="{{ url('/') }}/packages/checkout" method="get">
               <button type="submit" class="btn btn-primary" style="float: right; margin-top: 10px;">
                   Subscribe to our monthly delivery service
               </button>
             </form>
+            @endif
         </div>
     </div>
 </div>
