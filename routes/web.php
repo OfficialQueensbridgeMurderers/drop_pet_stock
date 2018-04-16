@@ -41,3 +41,11 @@ Route::get('/cart/add/{id}','CartController@ajouterArticle');
 Route::get('/cart/sup/{id}','CartController@supprimerArticle');
 Route::get('/cart/modifier/{id}','CartController@modifier');
 Route::get('/cart/checkout','CartController@checkout');
+
+
+
+
+route::get('/contact', 'ContactController@index');
+route::post('/contact', [ 'uses' => 'ContactController@store',
+'as' => 'contact.store'
+]);

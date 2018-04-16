@@ -55,6 +55,9 @@
          <a class="navbar-brand" href="{{ url('/') }}/shop">Items Shop</a>
          <a class="navbar-brand" href="{{ url('/') }}/profile">User Profil</a>
          <a class="navbar-brand" href="{{ url('/') }}/packages">Packages</a>
+          <a class="navbar-brand" href="{{ url('/') }}/contact">Contact</a>
+          <a class="navbar-brand" href="{{ url('/') }}/packages/delivery_box">Delivery Box</a>
+          <a class="navbar-brand" href="{{ url('/') }}/cart">Cart</a>
       </div><!--/navheader-->
       <div class="login">
          <ul class="nav navbar-nav navbar-right">

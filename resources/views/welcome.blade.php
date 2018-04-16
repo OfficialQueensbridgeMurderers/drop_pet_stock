@@ -14,7 +14,7 @@
 			    <h2>Sécurité</h2>
 			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
 
-			    <button type="button" class="buttonS">Read More!</button>
+
 
 			  </div>
 			  <div class="column" >
@@ -22,7 +22,7 @@
 			    <h2>Services</h2>
 			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
 
-				<button type="button" class="buttonS">Read More!</button>
+
 
 			  </div>
 			  <div class="column" >
@@ -30,7 +30,7 @@
 			    <h2>Abordable</h2>
 			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
 
-			    <button type="button" class="buttonS">Read More!</button>
+
 
 			  </div>
 			</div>
@@ -44,29 +44,31 @@
 			<div class="row">
 			  <div class="column2">
 
-			    <h2 class="p2">Petit Plant</h2>
-					<h2 class="p2">30$/Mois</h2>
-			    <p class="p3 ">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+			    <h2 class="p2">Delivery Box</h2>
+			
+			    <p class="p3 "> Custumizer vos package sauvgardez-les et modifiez les a n'importe quel moment. Ensuite on vous les livre. </p>
 
-			    <button type="button" class="buttonS2">BUY</button>
+			    <a  href="{{ url('/') }}/packages/delivery_box"> <button type="button" class="buttonS2"  onclick="">BUY</button> </a>
 
 			  </div>
 			  <div class="column2" >
 
-			    <h2 class="p2">Gros Plant</h2>
-					<h2 class="p2">60$/Mois</h2>
-			    <p class="p3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+			    <h2 class="p2">Packages available</h2>
 
-				<button type="button" class="buttonS2">BUY</button>
+			    <p class="p3"> Jettez un coup D'oeil a nos packge deja pré-fait pour vous et choissiez parmis vos produits préferer</p>
+
+			 <a  href="{{ url('/') }}/packages/available"> <button type="button" class="buttonS2"  onclick="">BUY</button> </a>
 
 			  </div>
 			  <div class="column2" >
 
 			    <h2 class="p2">Custumizer</h2>
 					<h2 class="p2">À la meusure de votre budget</h2>
-			    <p class="p3">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+			    <p class="p3">Vous connaissez votre annimal mieux que nous alors nous vous offront l'opportunité de
+					faire un forfait personnalisé à la meusure de votre budget et avec autant de choix que vous
+					le souhaitez. Choisissez parmis les plus grandes marques. </p>
 
-			    <button type="button" class="buttonS2">BUY</button>
+			   <a  href="{{ url('/') }}/packages/custom"> <button type="button" class="buttonS2"  onclick="">BUY</button> </a>
 
 			  </div>
 			</div>
