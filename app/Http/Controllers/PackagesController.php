@@ -23,6 +23,7 @@ class PackagesController extends Controller
             'id_user' => $userId,
             'id_package' => intval($id),
         ]);
+        return redirect()->back();
       }
 
       $packages = \App\AvailablePackages::all();
