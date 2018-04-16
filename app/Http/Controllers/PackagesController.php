@@ -113,4 +113,12 @@ class PackagesController extends Controller
       $nbCustom = count(\App\CustomPackages::where(['id_user'=> $userId, 'is_activated' => true])->get());
       return view('packages.delivery_box.index', ['userPackages' => $userPackages, 'customPackages' => $customPackages, 'nbCustom' => $nbCustom]);
   }
+
+  public function checkout()
+  {
+      $userId = Auth::id();
+      $userPackages = \App\UserPackage::where('id_user', $userId)->get();
+      $customPackages = \App\CustomPackages::where('id_user', $userId)->get();
+      return view('packages.checkout', ['userPackages' => $userPackages, 'customPackages' => $customPackages]);
+  }
 }

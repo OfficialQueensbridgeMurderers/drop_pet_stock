@@ -31,6 +31,8 @@
                   </form>
                   Premade package : {{ $userPackage->package->name }}
                   <br>
+                  Price : {{ $userPackage->package->prix }} $
+                  <br>
                   <br>
                   Items :
                   <br>
@@ -51,6 +53,8 @@
                   </form>
                   Custom package : {{ $customPackage->name }}
                   <br>
+                  Price : {{ $customPackage->price }} $
+                  <br>
                   <br>
                   Items :
                   <br>
@@ -62,6 +66,11 @@
                 @endif
                 @endforeach
             </div>
+            <form action="{{ url('/') }}/packages/checkout" method="get">
+              <button type="submit" class="btn btn-primary" style="float: right; margin-top: 10px;">
+                  Subscribe to our monthly delivery service
+              </button>
+            </form>
         </div>
     </div>
 </div>

@@ -1,5 +1,8 @@
+@extends('layouts.header_footer')
+
 @include('fonctionsCart')
 
+@section('content')
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="fr">
 <head>
@@ -18,11 +21,11 @@
 		<td>Prix Unitaire</td>
 		<td>Action</td>
 	</tr>
-	
+
 	@foreach ($cartItems as $item)
 		<tr>
-		<td>{{$item->produit->nom}}</td>	
-	    
+		<td>{{$item->produit->nom}}</td>
+
 		<form method="get" action="{{ url('/') }}/cart/modifier/{{$item->id}}">
 				<td><input type=text size=4 id=hu name=nombre value={{$item->quantity}} </input>
                 <button type="submit">
@@ -40,7 +43,7 @@
 		</th>
 	@endforeach
 	<?php
-	$priceTotal=0;	
+	$priceTotal=0;
 	foreach($cartItems as $p){
 	$price = $p->produit->prix * $p->quantity;
 	$priceTotal = $priceTotal + $price;
@@ -54,3 +57,4 @@
 </table>
 </body>
 </html>
+@endsection

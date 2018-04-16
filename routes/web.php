@@ -19,6 +19,7 @@ Route::resource('shop', 'ShopController');
 Route::resource('back', 'BackController');
 Route::get('cart', 'CartController@index');
 Route::get('packages', 'PackagesController@index');
+Route::get('packages/checkout', 'PackagesController@checkout');
 Route::get('packages/available', 'PackagesController@available');
 Route::get('packages/custom', 'PackagesController@custom');
 Route::get('packages/custom/create', 'PackagesController@create');
