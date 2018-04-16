@@ -8,9 +8,6 @@
 
   <!--fonts-->
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
-
-
 
   <!--Style header_footer-->
     <link href="{{ asset('css/header_footer.css')}}" rel="stylesheet">
@@ -19,6 +16,7 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!--Scripts Javascript-->
+    <script src="{{ asset('js/app.js') }}" defer></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script>
@@ -53,7 +51,7 @@
          <span class="icon-bar"></span>
          <span class="icon-bar"></span>
          </button>
-         <a class="navbar-brand-img navbar-left" href="#"><img src="../resources/images/dps-banner.png" alt="dps-banner.png"/></a>
+         <a class="navbar-brand-img navbar-left" href="{{ base_path() }}"><img src="{{ url('/') }}/storage/dps-banner.png" alt="dps-banner.png"/></a>
          <a class="navbar-brand" href="#items">Items Shop</a>
          <a class="navbar-brand" href="#profil">User Profil</a>
          <a class="navbar-brand" href="#package">Packages</a>
@@ -106,7 +104,7 @@
    </form>
 </div>
 
-  <main>
+  <main class="maincontent">    
     @yield('content')
   </main>
   <footer>

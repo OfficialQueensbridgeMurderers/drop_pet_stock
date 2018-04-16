@@ -10,7 +10,7 @@
 		 <div class="SuperDiv">
 			<div class="row">
 			  <div class="column">
-			    <img src="../resources/images/shield.png">
+			    <img src="../public/images/shield.png">
 			    <h2>Sécurité</h2>
 			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
 
@@ -18,7 +18,7 @@
 
 			  </div>
 			  <div class="column" >
-			    <img src="../resources/images/group.png">
+			    <img src="../public/images/group.png">
 			    <h2>Services</h2>
 			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
 
@@ -26,7 +26,7 @@
 
 			  </div>
 			  <div class="column" >
-			    <img src="../resources/images/mony.png">
+			    <img src="../public/images/mony.png">
 			    <h2>Abordable</h2>
 			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
 
