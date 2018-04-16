@@ -1,6 +1,6 @@
 .full-width-image {
       height: 700px !important;
-      background: url('../../resources/images/pets.jpg') center center no-repeat;
+      background: url('../../public/images/pets.jpg') center center no-repeat;
       background-size: cover;
     }
 

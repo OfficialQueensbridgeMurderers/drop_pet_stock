@@ -1,3 +1,8 @@
+.maincontent{
+  margin-top:3% !important;
+  background-image: url(../images/background.jpg) !important;
+}
+
 .search-form-wrapper {
     background-color:#000099 !important;
     display: none;
