@@ -48,7 +48,7 @@
                   @foreach ($items as $item)
                   <div class="card-body">
                     <img src="{{ url('/') }}{{ $item->img_path }}" height="100", width="100">
-                    <a href="{{ url('/') }}/shop/item/{{ $item->id }}/0">{{ $item->nom }}<a/>
+                    <a href="{{ url('/') }}/shop/item/{{ $item->id }}">{{ $item->nom }}<a/>
                     <br/>
                   </div>
                   @endforeach

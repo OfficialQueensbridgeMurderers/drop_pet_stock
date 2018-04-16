@@ -15,12 +15,16 @@ class CartController extends Controller
     }
 	public function ajouterArticle(int $id){
 				
-		DB::table('cart_item')->insert(
-		['id_user' => Auth::user()->id,
-		 'id_produit' => $id,
-		 'quantity' => 1]
-		);
-		return redirect()->action('CartController@index');
+		if(Auth::user() != null){	
+			DB::table('cart_item')->insert(
+			['id_user' => Auth::user()->id,
+			 'id_produit' => $id,
+			 'quantity' => 1]
+			);
+			return redirect()->action('CartController@index');
+		}else{
+			return view('/auth/login');
+		}
 	}
 	
 	public function supprimerArticle(int $id){	
