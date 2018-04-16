@@ -12,7 +12,7 @@
 			  <div class="column">
 			    <img src="../public/images/shield.png">
 			    <h2>Sécurité</h2>
-			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+			    <p class="p">Every monetary transaction that goes throught our site is handled throught the Paypal payment service which provides the most secure and efficient way to proceed to the payment. </p>
 
 
 
@@ -20,7 +20,7 @@
 			  <div class="column" >
 			    <img src="../public/images/group.png">
 			    <h2>Services</h2>
-			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+			    <p class="p">Time is money, that's why saving your time is important to us. To achieve this, we deliver the pet supplies fit for your needs to your door. You can buy items with the shopping cart or have them delivered monthly by adding a package to your delivery box </p>
 
 
 
@@ -28,7 +28,7 @@
 			  <div class="column" >
 			    <img src="../public/images/mony.png">
 			    <h2>Abordable</h2>
-			    <p class="p">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+			    <p class="p">Your budget, your package. We know that not everyone has the same needs and the same budget. That's why we offer full control of the delivery service to our users</p>
 
 
 
@@ -45,7 +45,7 @@
 			  <div class="column2">
 
 			    <h2 class="p2">Delivery Box</h2>
-			
+
 			    <p class="p3 "> Custumizer vos package sauvgardez-les et modifiez les a n'importe quel moment. Ensuite on vous les livre. </p>
 
 			    <a  href="{{ url('/') }}/packages/delivery_box"> <button type="button" class="buttonS2"  onclick="">BUY</button> </a>

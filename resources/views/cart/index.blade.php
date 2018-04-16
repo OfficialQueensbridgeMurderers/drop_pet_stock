@@ -56,9 +56,17 @@
 	      <td colspan=2>
 	      Subtotal : {{ $priceTotal }} $<br>
         Delivery fees : {{ $deliveryPriceTotal }} $<br>
-        <b>Total : {{ $priceTotal + $deliveryPriceTotal }} $</b>
+        <b>Total : {{ $priceTotal + $deliveryPriceTotal }} $</b><br>
+        @if ( $priceTotal + $deliveryPriceTotal != 0)
+        <form action="{{ url('/') }}/packages/checkout" method="get">
+          <button type="submit" class="btn btn-primary" style="float: right; margin-top: 10px;">
+              Checkout
+          </button>
+        </form>
+        @endif
 	      </td></tr>
 </table>
+<br>
 </body>
 </html>
 @endsection

@@ -8,6 +8,11 @@ use Auth;
 
 class CartController extends Controller
 {
+  public function __construct()
+  {
+      $this->middleware('auth');
+  }
+
     public function index()
     {
 		$cartItems = \App\CartItem::where('id_user', Auth::user()->id)->get();
